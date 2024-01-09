@@ -15,11 +15,9 @@ const Transactions = () => {
     indexOfLastRecord
   );
 
-  console.log(currentRecords);
-
   const nPages = Math.ceil(transactions.length / recordsPerPage);
 
-  const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
+  const pageNumbers  = Array.from({ length: nPages }, (_, index) => index + 1);
 
   const nextPage = () => {
     if (currentPage !== nPages) setCurrentPage(currentPage + 1);
@@ -32,7 +30,7 @@ const Transactions = () => {
     <div>
       <h3 className="text-xl pt-8 pb-5">Transactions | This Month</h3>
       <div className="bg-white p-[12px]">
-        <div className=" flex justify-between pb-3 items-center ">
+        <div className=" flex justify-between pb-3 gap-3 items-center ">
           <div className="flex rounded-[4px] gap-2 border px-4 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +39,7 @@ const Transactions = () => {
               viewBox="0 0 16 16"
               fill="none"
             >
-              <g clip-path="url(#clip0_48520_2526)">
+              <g clipPath="url(#clip0_48520_2526)">
                 <path
                   d="M6.8 12.0301C3.9328 12.0301 1.6 9.69143 1.6 6.81704C1.6 3.94266 3.9328 1.60401 6.8 1.60401C9.6672 1.60401 12 3.94266 12 6.81704C12 9.69143 9.6672 12.0301 6.8 12.0301ZM12.2792 10.8375C13.1056 9.70827 13.6 8.3216 13.6 6.81704C13.6 3.05805 10.5496 0 6.8 0C3.0504 0 0 3.05805 0 6.81704C0 10.576 3.0504 13.6341 6.8 13.6341C8.4728 13.6341 10.0048 13.0222 11.1896 12.0132L14.0032 14.8339C14.1592 14.9903 14.364 15.0689 14.5688 15.0689C14.7736 15.0689 14.9784 14.9903 15.1344 14.8339C15.4472 14.5203 15.4472 14.0134 15.1344 13.6999L12.2792 10.8375Z"
                   fill="#808080"
@@ -70,26 +68,26 @@ const Transactions = () => {
                 fill="none"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M1.62301 9.93375C1.83129 9.72547 2.16897 9.72547 2.37725 9.93375L4.641 12.1975L6.90474 9.93375C7.11302 9.72547 7.45071 9.72547 7.65899 9.93375C7.86727 10.142 7.86727 10.4797 7.65899 10.688L5.01812 13.3289C4.80984 13.5371 4.47215 13.5371 4.26387 13.3289L1.62301 10.688C1.41473 10.4797 1.41473 10.142 1.62301 9.93375Z"
                   fill="#4D4D4D"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M4.64095 2.51515C4.9355 2.51515 5.17428 2.75393 5.17428 3.04849L5.17428 12.9517C5.17428 13.2463 4.9355 13.4851 4.64095 13.4851C4.3464 13.4851 4.10762 13.2463 4.10762 12.9517L4.10762 3.04849C4.10762 2.75393 4.3464 2.51515 4.64095 2.51515Z"
                   fill="#4D4D4D"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M14.3772 6.06646C14.169 6.27474 13.8313 6.27474 13.623 6.06646L11.3592 3.80272L9.0955 6.06646C8.88722 6.27474 8.54953 6.27474 8.34126 6.06646C8.13298 5.85818 8.13298 5.52049 8.34126 5.31221L10.9821 2.67135C11.1904 2.46307 11.5281 2.46307 11.7364 2.67135L14.3772 5.31221C14.5855 5.52049 14.5855 5.85818 14.3772 6.06646Z"
                   fill="#4D4D4D"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M11.3593 13.4851C11.0647 13.4851 10.826 13.2463 10.826 12.9517L10.826 3.04847C10.826 2.75392 11.0647 2.51514 11.3593 2.51514C11.6538 2.51514 11.8926 2.75392 11.8926 3.04847L11.8926 12.9517C11.8926 13.2463 11.6538 13.4851 11.3593 13.4851Z"
                   fill="#4D4D4D"
                 />
@@ -115,10 +113,10 @@ const Transactions = () => {
           <table className="w-full table-auto  divide-gray-200 ">
             <thead className=" w-full bg-[#F2F2F2] ">
               <tr className="">
-                <th className=" px-6 py-3 text-start text-sm font-medium text-[#4D4D4D]">
+                <th className=" px-3 md:px-6 py-1 md:py-3  text-start text-xs md:text-sm font-medium text-[#4D4D4D]">
                   Order ID
                 </th>
-                <th className=" flex items-center gap-1 px-6 py-3 text-start text-sm font-medium text-[#4D4D4D]">
+                <th className=" inline-flex items-center gap-1 px-3 md:px-6 py-1 md:py-3 text-start text-xs md:text-sm font-medium text-[#4D4D4D]">
                   Order date
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -133,10 +131,10 @@ const Transactions = () => {
                     />
                   </svg>
                 </th>
-                <th className=" px-6 py-3 text-end text-sm font-medium text-[#4D4D4D]">
+                <th className=" px-3 md:px-6 py-1 md:py-3  text-end text-xs md:text-sm font-medium text-[#4D4D4D]">
                   Order amount
                 </th>
-                <th className=" px-6 py-3 text-end text-sm font-medium text-[#4D4D4D]">
+                <th className=" px-3 md:px-6 py-1 md:py-3 text-end text-xs md:text-sm font-medium text-[#4D4D4D]">
                   Transaction fees
                 </th>
               </tr>
@@ -175,8 +173,8 @@ const Transactions = () => {
                   fill="none"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M11.7803 3.96967C11.4874 3.67678 11.0126 3.67678 10.7197 3.96967L6.21967 8.46967C6.07902 8.61032 6 8.80109 6 9C6 9.19891 6.07902 9.38968 6.21967 9.53033L10.7197 14.0303C11.0126 14.3232 11.4874 14.3232 11.7803 14.0303C12.0732 13.7374 12.0732 13.2626 11.7803 12.9697L7.81066 9L11.7803 5.03033C12.0732 4.73744 12.0732 4.26256 11.7803 3.96967Z"
                     fill="#4D4D4D"
                   />
@@ -185,6 +183,7 @@ const Transactions = () => {
               </button>
               {pageNumbers.map((num) => (
                 <button
+                key={num}
                   onClick={() => {
                     setCurrentPage(num);
                   }}
@@ -210,8 +209,8 @@ const Transactions = () => {
                   fill="none"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M6.21967 3.96967C6.51256 3.67678 6.98744 3.67678 7.28033 3.96967L11.7803 8.46967C11.921 8.61032 12 8.80109 12 9C12 9.19891 11.921 9.38968 11.7803 9.53033L7.28033 14.0303C6.98744 14.3232 6.51256 14.3232 6.21967 14.0303C5.92678 13.7374 5.92678 13.2626 6.21967 12.9697L10.1893 9L6.21967 5.03033C5.92678 4.73744 5.92678 4.26256 6.21967 3.96967Z"
                     fill="#4D4D4D"
                   />

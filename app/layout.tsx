@@ -16,12 +16,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex justify-between">
+        <div className="flex w-full ">
+          <div className=" md:w-[6%] lg:w-[12%]">
           <Sidebar />
-          <div className="w-full">
+          </div>
+          <div className=" w-full md:w-[94%]  lg:w-[88%]">
             <Header />
             {children}
           </div>
