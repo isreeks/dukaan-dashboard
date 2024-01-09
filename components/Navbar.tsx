@@ -21,7 +21,7 @@ const Navbar = () => {
       <aside className={` ${open ? " block " : " hidden "}  relative transition duration-100 md:block z-40`}>
         <div
           onClick={() => setOpen(false)}
-          className="fixed md:hidden w-full top-0 z-10 left-0 h-screen bg-slate-400/20"
+          className="fixed md:hidden w-full top-0 -z-10 left-0 h-screen bg-slate-400/20"
         ></div>
         <div className=" bg-primary h-screen  items-center z-30   flex justify-between flex-col text-white  lg:px[10px] xl:px-[14px] py-[16px]">
           <div className=" flex flex-col gap-6">
