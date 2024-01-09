@@ -91,13 +91,13 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <div className="px-1">
+
           <div className="flex  md:justify-center w-full rounded-md bg-gray-100/20 md:bg-transparent lg:bg-gray-100/20 lg:px-3 py-2  items-center gap-2">
-            <div className="lg:p-2  bg-gray-100/50 rounded-md">
+            <div className="lg:p-1  bg-gray-100/50 rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
               >
@@ -110,12 +110,11 @@ const Navbar = () => {
               </svg>
             </div>
             <div className=" md:hidden lg:block">
-              <p className="text-[14px] md:text-[12px] lg:text-[14px] ">Available credits</p>
+              <p className="text-[14px] md:text-[12px] font-medium lg:text-[12px] ">Available credits</p>
               <p className="text-md font-medium">222.10</p>
             </div>
           </div>
 
-          </div>
         </div>
       </aside>
 
