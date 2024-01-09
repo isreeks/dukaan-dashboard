@@ -7,7 +7,7 @@ const time = [{ title: "Last Month" }, { title: "Last Year" }];
 
 export default function Home() {
   return (
-    <main className="py-4 md:py-8 px-4 md:px-12">
+    <main className="py-4  md:py-8 px-4 md:px-12">
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <h3 className="text-[20px]">Overview</h3>

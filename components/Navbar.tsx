@@ -17,13 +17,13 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" w-full  relative">
+    <div className="sticky  top-0 left-0">
       <aside className={` ${open ? " block " : " hidden "}  relative transition duration-100 md:block z-40`}>
         <div
           onClick={() => setOpen(false)}
           className="fixed md:hidden w-full top-0 z-10 left-0 h-screen bg-slate-400/20"
         ></div>
-        <div className=" bg-primary  items-center z-30   flex justify-between flex-col text-white h-screen px-[14px] py-[16px]">
+        <div className=" bg-primary h-screen  items-center z-30   flex justify-between flex-col text-white  lg:px[10px] xl:px-[14px] py-[16px]">
           <div className=" flex flex-col gap-6">
             <div className="flex gap-4  items-center justify-between ">
               <div className="relative w-full px-3">
@@ -76,23 +76,24 @@ const Navbar = () => {
                 </Listbox>
               </div>
             </div>
-            <div className="">
+            <div className="px-2">
               {Menu.map((menu, i) => (
                 <Link
   
                   key={i}
                   className={`flex  items-center ${
-                    menu.uri === path ? "bg-gray-100/20  rounded-[4px]" : ""
-                  } px-4 py-2 gap-3`}
+                    menu.uri === path ? "bg-gray-100/20 rounded-[4px]" : ""
+                  } md:px-1 lg:px-2 flex md:justify-center lg:justify-start py-2 gap-3 md:gap-0 lg:gap-3`}
                   href={menu.uri}
                 >
-                  {menu.icon} <p className=" flex md:hidden lg:flex text-sm">{menu.title}</p>
+                  <div className="px-1">{menu.icon}</div> <p className=" flex md:hidden lg:flex text-sm">{menu.title}</p>
                 </Link>
               ))}
             </div>
           </div>
-          <div className="flex w-full rounded-md bg-gray-100/20 md: bg-transparent lg:bg-gray-100/20 lg:px-3 py-2  items-center gap-2">
-            <div className=" lg:p-2 bg-gray-100/50 rounded-md">
+          <div className="px-1">
+          <div className="flex  md:justify-center w-full rounded-md bg-gray-100/20 md:bg-transparent lg:bg-gray-100/20 lg:px-3 py-2  items-center gap-2">
+            <div className="lg:p-2  bg-gray-100/50 rounded-md">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -109,16 +110,18 @@ const Navbar = () => {
               </svg>
             </div>
             <div className=" md:hidden lg:block">
-              <p className="text-sm">Available credits</p>
+              <p className="text-[14px] md:text-[12px] lg:text-[14px] ">Available credits</p>
               <p className="text-md font-medium">222.10</p>
             </div>
+          </div>
+
           </div>
         </div>
       </aside>
 
       <button
         onClick={() => setOpen(!open)}
-        className=" fixed md:hidden bg-primary text-white p-1 rounded-e-md top-12"
+        className=" fixed md:hidden bg-primary z-30 text-white p-1 rounded-e-md top-28"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

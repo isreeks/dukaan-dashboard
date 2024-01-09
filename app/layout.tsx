@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex w-full ">
-          <div className=" md:w-[6%] lg:w-[12%]">
+        <div className="flex w-full justify-between ">
+          <div className=" lg:[20%] xl:w-[12%]">
           <Sidebar />
           </div>
           <div className=" w-full md:w-[94%]  lg:w-[88%]">

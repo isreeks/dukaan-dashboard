@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 function Header() {
   const path = usePathname().replace("/", "");
   return (
-    <div className=" w-full bg-white gap-2 border-borders border-b flex px-4 md:px-8 py-3 justify-between ">
+    <div className=" w-full sticky top-0 z-20 bg-white gap-2 border-borders border-b flex px-8 md:px-8 py-3 justify-between ">
       <div className="flex gap-1 md:gap-4 items-center">
-        <p className=" text-[15px] capitalize text-black">{path}</p>
+        <p className=" text-[15px] md:pl-4  capitalize text-black">{path}</p>
         <div className="flex gap-2 cursor-pointer items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
