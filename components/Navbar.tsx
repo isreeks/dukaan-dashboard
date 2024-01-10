@@ -17,12 +17,31 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sticky  top-0 left-0">
-      <aside className={` ${open ? " block " : " hidden "}  relative transition duration-100 md:block z-40`}>
+    <div className=" fixed md:sticky z-40 top-0 left-0">
+      <aside
+        className={` ${
+          open ? " block " : " hidden "
+        }  relative transition duration-100 md:block z-40`}
+      >
         <div
           onClick={() => setOpen(false)}
-          className="fixed md:hidden w-full top-0 -z-10 left-0 h-screen bg-slate-400/20"
-        ></div>
+          className="fixed  md:hidden w-full top-0 -z-10 left-0 h-screen bg-slate-400/30"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 absolute top-2 right-2 "
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
         <div className=" bg-primary h-screen  items-center z-30   flex justify-between flex-col text-white  lg:px[10px] xl:px-[14px] py-[16px]">
           <div className=" flex flex-col gap-6">
             <div className="flex gap-4  items-center justify-between ">
@@ -79,14 +98,16 @@ const Navbar = () => {
             <div className="px-2">
               {Menu.map((menu, i) => (
                 <Link
-  
                   key={i}
                   className={`flex  items-center ${
                     menu.uri === path ? "bg-gray-100/20 rounded-[4px]" : ""
                   } md:px-1 lg:px-2 flex md:justify-center lg:justify-start py-2 gap-3 md:gap-0 lg:gap-3`}
                   href={menu.uri}
                 >
-                  <div className="px-1">{menu.icon}</div> <p className=" flex md:hidden lg:flex text-sm">{menu.title}</p>
+                  <div className="px-1">{menu.icon}</div>{" "}
+                  <p className=" flex md:hidden lg:flex text-sm">
+                    {menu.title}
+                  </p>
                 </Link>
               ))}
             </div>
@@ -110,11 +131,12 @@ const Navbar = () => {
               </svg>
             </div>
             <div className=" md:hidden lg:block">
-              <p className="text-[14px] md:text-[12px] font-medium lg:text-[12px] ">Available credits</p>
+              <p className="text-[14px] md:text-[12px] font-medium lg:text-[12px] ">
+                Available credits
+              </p>
               <p className="text-md font-medium">222.10</p>
             </div>
           </div>
-
         </div>
       </aside>
 
