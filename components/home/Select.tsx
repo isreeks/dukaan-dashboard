@@ -10,7 +10,7 @@ export function Select({ data }: any) {
   return (
     <div className=" relative">
       <Listbox value={selectedTime} onChange={setSelectedTime}>
-        <Listbox.Button className="px-3 py-[6px] w-[137px] border justify-between text-sm flex items-center gap-2 rounded ">
+        <Listbox.Button className="px-3 py-[6px] bg-white w-[137px] border justify-between text-sm flex items-center gap-2 rounded ">
           {selectedTime.title}
           <svg
             xmlns="http://www.w3.org/2000/svg"
