@@ -29,7 +29,7 @@ const Transactions = () => {
   return (
     <div>
       <h3 className="text-xl pt-8 pb-5">Transactions | This Month</h3>
-      <div className="bg-white p-[12px]">
+      <div className="bg-white p-[12px] rounded-md">
         <div className=" flex justify-between pb-3 gap-3 items-center ">
           <div className="flex rounded-[4px] gap-2 border px-4 items-center">
             <svg
